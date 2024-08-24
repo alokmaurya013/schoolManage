@@ -1,9 +1,13 @@
 const mysql=require('mysql2/promise');
-const password=process.env.PASSWORD
+const host=process.env.HOST;
+const user=process.env.USER
+const password=process.env.PASSWORD;
+const database=process.env.DATABASE;
+
 const mySqlPool=mysql.createPool({
-   host:"localhost",
-   user:"root",
+   host:host,
+   user:user,
    password:password,
-   database:"school_db"
+   database:database,
 })
 module.exports=mySqlPool;
